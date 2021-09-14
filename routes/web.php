@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,15 @@ Route::get('/', function () {
 Route::get('/agregarCliente', function(){
     return view('agregarCliente');
 });
+
+Route::get('/listarCliente', function(){
+    return view('listarCliente');
+});
+
+
+Route::resource('/listarCliente', ClienteController::class);
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

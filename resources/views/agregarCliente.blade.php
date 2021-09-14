@@ -1,6 +1,6 @@
 @extends('layouts.mainDash')
 @section('contenido')
 
-hola
+Aqui se agrega clientes
 
 @endsection
