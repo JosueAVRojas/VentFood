@@ -36,7 +36,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Utilidades de Orden:</h6>
-                        <a class="collapse-item" href="buttons.html">Agregar</a>
+                        <a class="collapse-item" href="/agregarCliente">Agregar</a>
                         <a class="collapse-item" href="cards.html">Buscar</a>
                     </div>
                 </div>
