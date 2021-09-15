@@ -21,7 +21,6 @@ class ClienteController extends Controller
             -> Select('id', 'nombre', 'apellido', 'telefono', 'direccion', 'fraccionamiento')
             ->Where('nombre', 'LIKE', '%'.$texto.'%')
             ->orWhere('telefono', 'LIKE', '%'.$texto.'%')
-            ->orderBy('nombre', 'ASC')
             ->paginate(15);
         return view('listarCliente', compact('clientes', 'texto'));
     }
@@ -33,7 +32,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregarCliente');
     }
 
     /**
@@ -44,7 +43,14 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new ClienteModel;
+        $cliente -> nombre=$request->input('nombre'); 
+        $cliente -> apellido=$request->input('apellido'); 
+        $cliente -> telefono=$request->input('telefono'); 
+        $cliente -> direccion=$request->input('direccion'); 
+        $cliente -> fraccionamiento=$request->input('fraccionamiento'); 
+        $cliente -> save();
+        return redirect()->route('listarCliente.index');
     }
 
     /**

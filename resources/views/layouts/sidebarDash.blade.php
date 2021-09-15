@@ -55,8 +55,6 @@
                         <h6 class="collapse-header">Utilidades de cliente:</h6>
                         <a class="collapse-item" href="/agregarCliente">Agregar</a>
                         <a class="collapse-item" href="/listarCliente">Buscar</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
             </li>

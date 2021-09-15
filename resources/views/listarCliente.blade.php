@@ -17,7 +17,6 @@
 </div>
 
 
-
 <div class="table-responsive">
 <table class="table table-hover">
 <thead>
@@ -28,7 +27,7 @@
     <th scope="col">Telefono</th>
     <th scope="col">Dirección</th>
     <th scope="col">Fraccionamiento</th>
-    <th colspan="2"><button type="button" class="btn btn-success float-right mr-4">Agregar</button></th>
+    <th colspan="2"><a href="{{route('listarCliente.create')}}" type="submit" class="btn btn-success float-right mr-4">Agregar</a></th>
     </tr>
 </thead>
 <tbody>
