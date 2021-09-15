@@ -28,14 +28,13 @@
     <th scope="col">Telefono</th>
     <th scope="col">Dirección</th>
     <th scope="col">Fraccionamiento</th>
-    <th></th>
-    <th></th>
+    <th colspan="2"><button type="button" class="btn btn-success float-right mr-4">Agregar</button></th>
     </tr>
 </thead>
 <tbody>
     @if(count($clientes)<= 0)
         <tr> 
-            <td colspan="6">
+            <td colspan="7">
                 No hay resultados por mostar, por favor intente buscar de nuevo.
             </td>
         </tr>
@@ -47,9 +46,9 @@
         <td>{{$cliente -> apellido}}</td>
         <td>{{$cliente -> telefono}}</td>
         <td>{{$cliente -> direccion}}</td>
-        <td>{{$cliente -> fraccionamiento}}</td>
-        <td><button type="button" class="btn btn-warning">Editar</button></td>
-        <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+        <td >{{$cliente -> fraccionamiento}}</td>
+        <td><button type="button" class="btn btn-warning float-right">Editar</button></td>
+        <td><button type="button" class="btn btn-danger float-right mr-4">Eliminar</button></td>
         </tr>
     @endforeach
     @endif
