@@ -46,9 +46,14 @@
         <td>{{$cliente -> telefono}}</td>
         <td>{{$cliente -> direccion}}</td>
         <td >{{$cliente -> fraccionamiento}}</td>
-        <td><button type="button" class="btn btn-warning float-right">Editar</button></td>
-        <td><button type="button" class="btn btn-danger float-right mr-4">Eliminar</button></td>
+        <td><a href="{{route('listarCliente.edit', $cliente->id)}}" type="submit" class="btn btn-warning float-right">Editar</a></td>
+        <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$cliente->id}}">
+            Eliminar
+        </button>
+        </td>
         </tr>
+        @include('eliminarCliente')
     @endforeach
     @endif
 </tbody>
