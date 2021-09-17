@@ -99,6 +99,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto=ProductoModel::findOrFail($id);
+        $producto->delete();
+        return redirect()->route('listarProductos.index');
     }
 }

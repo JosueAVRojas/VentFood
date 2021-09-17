@@ -48,8 +48,12 @@
         <td>{{$producto -> precio}}</td>
         <td><a href="{{route('listarProductos.edit',$producto  -> id)}}" type="submit" class="btn btn-warning float-right">Editar</a></td>
         <td>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$producto->id}}">
+                Eliminar
+            </button>
         </td>
         </tr>
+        @include('productos.eliminarProductos')
     @endforeach
     @endif
 </tbody>
