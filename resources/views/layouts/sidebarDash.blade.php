@@ -64,7 +64,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-hamburger"></i>
                     <span>Productos</span>
                 </a>
                 <div id="collapseProductos" class="collapse" aria-labelledby="headingUtilities"
@@ -73,6 +73,23 @@
                         <h6 class="collapse-header">Utilidades de productos:</h6>
                         <a class="collapse-item" href="{{route('listarProductos.create')}}">Agregar</a>
                         <a class="collapse-item" href="/listarProductos">Buscar</a>
+                    </div>
+                </div>
+            </li>
+
+                        <!-- Nav Item - Utilities Collapse Menu -->
+                        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRepartidor"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Repartidores</span>
+                </a>
+                <div id="collapseRepartidor" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilidades de repartidor:</h6>
+                        <a class="collapse-item" href="#">Agregar</a>
+                        <a class="collapse-item" href="#">Buscar</a>
                     </div>
                 </div>
             </li>
@@ -130,9 +147,9 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+                <img class="sidebar-card-illustration mb-2" src="{{asset('dashboard/img/undraw_rocket.svg')}}" alt="...">
+                <p class="text-center mb-2"><strong>Admin VentFood</strong> tiene una prueba gratuita de 1 mes, luego se cobrara una renta para mantener el proyecto funcional</p>
+                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Actualiza a Pro</a>
             </div>
 
         </ul>
