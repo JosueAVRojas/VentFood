@@ -29,7 +29,7 @@
     <th scope="col">Nombre</th>
     <th scope="col">Descripción</th>
     <th scope="col">Precio</th>
-    <th colspan="2"><a href="{{route('listarProductos.create')}}" type="submit" class="btn btn-success float-right mr-4">Agregar</a></th>
+    <th colspan="2"><a href="{{route('listarProductos.create')}}" type="submit" class="btn btn-success float-right mr-2">Agregar</a></th>
     </tr>
 </thead>
 <tbody>

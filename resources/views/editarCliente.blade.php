@@ -7,6 +7,8 @@
 </div>
 <hr/>
 
+<p>Si edita un cliente no podra recuperar la informacion modificada.</p>
+
 <form class="row g-3"  action="{{route('listarCliente.update', $cliente-> id)}}" method="post">
   @csrf
   @method('PUT')
