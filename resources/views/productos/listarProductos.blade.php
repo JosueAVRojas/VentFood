@@ -46,7 +46,7 @@
         <td>{{$producto -> nombre}}</td>
         <td>{{$producto -> descripcion}}</td>
         <td>{{$producto -> precio}}</td>
-        <td><a href="#" type="submit" class="btn btn-warning float-right">Editar</a></td>
+        <td><a href="{{route('listarProductos.edit',$producto  -> id)}}" type="submit" class="btn btn-warning float-right">Editar</a></td>
         <td>
         </td>
         </tr>
@@ -54,6 +54,7 @@
     @endif
 </tbody>
 </table>
+{{$productos -> links()}}
 </div>
 
 
