@@ -70,7 +70,8 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto=ProductoModel::findOrFail($id);
+        return view('productos.editarProductos', compact('producto'));
     }
 
     /**
@@ -82,7 +83,12 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto=ProductoModel::findOrFail($id);
+        $producto->nombre=$request->input('nombre');
+        $producto->descripcion=$request->input('descripcion');
+        $producto->precio=$request->input('precio');
+        $producto->save();
+        return redirect()->route('listarProductos.index');
     }
 
     /**
