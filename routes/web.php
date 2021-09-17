@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProductoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,13 @@ Route::get('/listarCliente', function(){
     return view('listarCliente');
 });
 
+Route::get('/listarProductos', function(){
+    return view('productos.listarProductos');
+});
 
 Route::resource('/listarCliente', ClienteController::class);
+
+Route::resource('/listarProductos', ProductoController::class);
 
 
 Auth::routes();

@@ -59,6 +59,24 @@
                 </div>
             </li>
 
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-user"></i>
+                    <span>Productos</span>
+                </a>
+                <div id="collapseProductos" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilidades de productos:</h6>
+                        <a class="collapse-item" href="{{route('listarProductos.create')}}">Agregar</a>
+                        <a class="collapse-item" href="/listarProductos">Buscar</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 

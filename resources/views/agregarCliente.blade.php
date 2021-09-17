@@ -21,11 +21,11 @@
     <label for="telefono" class="form-label">Teléfono</label>
     <input type="text" class="form-control" id="telefono" name="telefono" required maxlength="10">
   </div>
-  <div class="col-8 mt-4">
+  <div class="col-8 mt-2">
     <label for="direccion" class="form-label">Dirección</label>
     <input type="text" class="form-control" id="direccion" name="direccion" required maxlength="100">
   </div>
-  <div class="col-md-4 mt-4">
+  <div class="col-md-4 mt-2">
     <label for="fraccionamiento" class="form-label">Fraccionamiento</label>
     <input type="text" class="form-control" id="fraccionamiento" name="fraccionamiento" required maxlength="100">
   </div>

@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ClienteModel;
+use App\Models\ProductoModel;
 use Illuminate\Support\Facades\DB;
 
-class ClienteController extends Controller
+
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +17,12 @@ class ClienteController extends Controller
      */
     public function index(Request $request)
     {
-        $texto = trim($request->get('texto'));
-        $clientes=DB::table('clientes')
-            -> Select('id', 'nombre', 'apellido', 'telefono', 'direccion', 'fraccionamiento')
+        $texto=trim($request->get('texto'));
+        $productos=DB::table('productos')
+            ->SELECT('id', 'nombre', 'descripcion', 'precio')
             ->Where('nombre', 'LIKE', '%'.$texto.'%')
-            ->orWhere('telefono', 'LIKE', '%'.$texto.'%')
             ->paginate(10);
-        return view('listarCliente', compact('clientes', 'texto'));
+        return view('productos.listarProductos', compact('productos', 'texto'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('agregarCliente');
+        return view('productos.agregarProductos');
     }
 
     /**
@@ -43,14 +43,12 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $cliente = new ClienteModel;
-        $cliente -> nombre=$request->input('nombre'); 
-        $cliente -> apellido=$request->input('apellido'); 
-        $cliente -> telefono=$request->input('telefono'); 
-        $cliente -> direccion=$request->input('direccion'); 
-        $cliente -> fraccionamiento=$request->input('fraccionamiento'); 
-        $cliente -> save();
-        return redirect()->route('listarCliente.index');
+        $producto = new ProductoModel;
+        $producto->nombre=$request->input('nombre');
+        $producto->descripcion=$request->input('descripcion');
+        $producto->precio=$request->input('precio');
+        $producto->save();
+        return redirect()->route('listarProductos.index');
     }
 
     /**
@@ -72,8 +70,7 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente= ClienteModel::findOrFail($id);
-        return view('editarCliente', compact('cliente'));
+        //
     }
 
     /**
@@ -85,15 +82,7 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cliente=ClienteModel::findOrFail($id);
-        $cliente -> nombre=$request->input('nombre'); 
-        $cliente -> apellido=$request->input('apellido'); 
-        $cliente -> telefono=$request->input('telefono'); 
-        $cliente -> direccion=$request->input('direccion'); 
-        $cliente -> fraccionamiento=$request->input('fraccionamiento');
-        $cliente -> save();
-        return redirect()->route('listarCliente.index');
-
+        //
     }
 
     /**
@@ -104,8 +93,6 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        $cliente=ClienteModel::findOrFail($id);
-        $cliente->Delete();
-        return redirect()->route('listarCliente.index');
+        //
     }
 }

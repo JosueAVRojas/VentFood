@@ -10,8 +10,12 @@
     
     <nav class="navbar navbar-light bg-light">
     <form class="form-inline" action="{{route('listarCliente.index')}}" method="get">
-        <input class="form-control mr-sm-2" type="text" name="texto" value="{{$texto}}" placeholder="Buscar clientes" aria-label="Search">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+        <div class="col-8 ">
+            <input class="form-control mr-sm-2" type="text" name="texto" value="{{$texto}}" placeholder="Buscar clientes" aria-label="Search" autocomplete="off">
+        </div>
+        <div class="col-4 ">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+        </div>
     </form>
     </nav>
 </div>
