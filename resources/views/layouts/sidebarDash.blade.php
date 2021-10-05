@@ -82,14 +82,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRepartidor"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-users"></i>
-                    <span>Personal</span>
+                    <span>Empleados</span>
                 </a>
                 <div id="collapseRepartidor" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Utilidades del personal:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Buscar</a>
+                        <a class="collapse-item" href="{{route('listarEmpleados.create')}}">Agregar</a>
+                        <a class="collapse-item" href="/listarEmpleados">Buscar</a>
                     </div>
                 </div>
             </li>

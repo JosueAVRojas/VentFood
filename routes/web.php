@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
-
+use App\Http\Controllers\PersonalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +36,7 @@ Route::resource('/listarCliente', ClienteController::class);
 
 Route::resource('/listarProductos', ProductoController::class);
 
+Route::resource('/listarEmpleados', PersonalController::class);
 
 Auth::routes();
 
