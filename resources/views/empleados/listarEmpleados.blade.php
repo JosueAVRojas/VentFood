@@ -11,7 +11,7 @@
     <nav class="navbar navbar-light bg-light">
     <form class="form-inline" action="{{route('listarEmpleados.index')}}" method="get">
         <div class="col-8 ">
-            <input class="form-control mr-sm-2" type="text" name="texto" value="{{$texto}}" placeholder="Buscar clientes" aria-label="Search" autocomplete="off">
+            <input class="form-control mr-sm-2" type="text" name="texto" value="{{$texto}}" placeholder="Buscar empleados" aria-label="Search" autocomplete="off">
         </div>
         <div class="col-4 ">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
@@ -47,14 +47,22 @@
         <td>{{$empleado -> nombre}}</td>
         <td>{{$empleado -> telefono}}</td>
         <td>{{$empleado -> sueldo}}</td>
-        <td>{{$empleado -> cargo}}</td>
-        <td><a type="submit" class="btn btn-warning float-right">Editar</a></td>
         <td>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" >
+            @foreach ($cargos as $cargo)
+                @if($empleado -> cargo == $cargo -> id)
+                    {{ $cargo -> nombre }}
+                @endif
+            @endforeach
+
+        </td>
+        <td><a href="{{route('listarEmpleados.edit', $empleado->id)}}" type="submit" class="btn btn-warning float-right">Editar</a></td>
+        <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$empleado->id}}">
             Eliminar
         </button>
         </td>
         </tr>
+        @include('empleados.eliminarEmpleados')
     @endforeach
     @endif
 </tbody>

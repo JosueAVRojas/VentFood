@@ -23,7 +23,9 @@ class PersonalController extends Controller
         ->WHERE('nombre', 'LIKE', '%'.$texto.'%')
         ->paginate(10);
         
-        return view('empleados.listarEmpleados', compact('empleados', 'texto'));
+        $cargos = CargoModel::all();
+
+        return view('empleados.listarEmpleados', compact('empleados', 'texto', 'cargos'));
     }
 
 
@@ -34,7 +36,8 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        return view("empleados.agregarEmpleados");
+        $cargos = CargoModel::all();
+        return view("empleados.agregarEmpleados", compact('cargos'));
     }
 
     /**
@@ -73,7 +76,9 @@ class PersonalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cargos = CargoModel::all();
+        $empleados = PersonalModel::findOrFail($id);
+        return view('empleados.editarEmpleados', compact('cargos', 'empleados'));
     }
 
     /**
@@ -85,7 +90,13 @@ class PersonalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empleados = PersonalModel::findOrFail($id);
+        $empleados->nombre=$request->input('nombre');
+        $empleados->telefono=$request->input('telefono');
+        $empleados->sueldo=$request->input('sueldo');
+        $empleados->cargo=$request->input('cargo');
+        $empleados->save();
+        return redirect()->route('listarEmpleados.index');
     }
 
     /**
@@ -96,6 +107,8 @@ class PersonalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $empleado = PersonalModel::findOrFail($id);
+        $empleado -> delete();
+        return redirect()->route('listarEmpleados.index');
     }
 }
