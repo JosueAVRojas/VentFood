@@ -78,7 +78,7 @@
             </li>
 
                         <!-- Nav Item - Utilities Collapse Menu -->
-                        <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRepartidor"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-users"></i>
@@ -93,6 +93,24 @@
                     </div>
                 </div>
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCargo"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-user-tag"></i>
+                    <span>Cargos</span>
+                </a>
+                <div id="collapseCargo" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Utilidades de los cargos:</h6>
+                        <a class="collapse-item" href="#">Agregar</a>
+                        <a class="collapse-item" href="/listarCargos">Buscar</a>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">

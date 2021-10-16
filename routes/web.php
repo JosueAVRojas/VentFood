@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\CargoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@ Route::resource('/listarCliente', ClienteController::class);
 Route::resource('/listarProductos', ProductoController::class);
 
 Route::resource('/listarEmpleados', PersonalController::class);
+
+Route::resource('/listarCargos', CargoController::class);
 
 Auth::routes();
 
